@@ -6,6 +6,6 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://eureka00zero.github.io",
-  base: "BBlog",
+  base: "/BBlog",
   integrations: [mdx(), sitemap()],
 });
