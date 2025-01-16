@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/BlogPost.astro";
+import WaterFall from "../components/waterFall";
+import type { ImageMetadata } from "astro";
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/public/son/*.{jpeg,jpg,png,gif}"
+);
+---
+
+<Layout title="图库" description="我和儿子的博客">
+  <WaterFall client:load imagePaths={images} />
+</Layout>
