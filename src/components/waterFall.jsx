@@ -75,7 +75,7 @@ const ImageWaterfall = ({imagePaths}) => {
       <div className="image-container">
         {filteredImages.map((image, index) => (
           <div key={index} className="image-item">
-            <img src={`${import.meta.env.BASE_URL}/${image.url}`} />
+            <img src={`${import.meta.env.BASE_URL}${image.url}`} />
           </div>
         ))}
       </div>
