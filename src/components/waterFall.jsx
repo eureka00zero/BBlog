@@ -3,13 +3,9 @@ import '../styles/ImageWaterfall.css';
 
 const ImageWaterfall = ({imagePaths}) => {
 	const paths = Object.keys(imagePaths)
-	const localImages = [
-		{ url: paths[0], alt: 'Image 1', timestamp: '2025-01-10T12:00:00' },
-		{ url: paths[0], alt: 'Image 1', timestamp: '2025-01-10T12:00:00' },
-		{ url: paths[0], alt: 'Image 1', timestamp: '2025-01-10T12:00:00' },
-		{ url: paths[0], alt: 'Image 1', timestamp: '2025-01-10T12:00:00' }
-		// 可以添加更多的图片对象
-	];
+	const localImages = paths.map((item)=>{
+		return { url: item.split('/public')[1], alt: 'Image 1', timestamp: '2025-01-10T12:00:00' }
+	})
   const [images, setImages] = useState([]);
   const [filteredImages, setFilteredImages] = useState([]);
   const [selectedTime, setSelectedTime] = useState('all');
